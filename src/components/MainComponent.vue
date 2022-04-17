@@ -1,17 +1,17 @@
 <template>
   <div class="main-component">
-    <div class="main-title"><span class="title">USERS</span></div>
-    <div class="card-body">
+    <div class="heading1"><span>USERS</span></div>
+    <div class="main-component__body">
       <div
         v-for="user in fetchUsers"
         :key="user.id"
         @click="openModal(user)"
         class="card"
       >
-        <img class="card-img" :src="user.image" loading="lazy" />
-        <div class="img-overlay">
-          <p class="overlay-title">{{ user.name }}</p>
-          <p class="overlay-subtitle">{{ user.address.city }}</p>
+        <img class="card__img" :src="user.image" loading="lazy" />
+        <div class="card__img-overlay">
+          <p class="card__title">{{ user.name }}</p>
+          <p>{{ user.address.city }}</p>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
 };
 </script>
 <style scoped>
-.img-overlay {
+.card__img-overlay {
   height: 100%;
   width: 100%;
   background: #0000006b;
@@ -75,12 +75,12 @@ export default {
   border-radius: 10px;
   cursor: pointer;
 }
-.overlay-title {
+.card__title {
   font-weight: bold;
   font-size: 20px;
   margin: 0;
 }
-.main-title {
+.heading1 {
   width: 100%;
   text-align: right;
   margin: 20px 0;
@@ -92,13 +92,13 @@ export default {
   overflow: auto;
   margin-left: 250px;
 }
-.title {
+.heading1 span {
   font-size: 36px;
   font-weight: bold;
   border-bottom: 5px solid #000;
   margin-right: 50px;
 }
-.card-body {
+.main-component__body {
   display: flex;
   flex-wrap: wrap;
 }
@@ -107,10 +107,10 @@ export default {
   margin: 10px 5px;
   position: relative;
 }
-.card:hover .img-overlay {
+.card:hover .card__img-overlay {
   opacity: 1;
 }
-.card-img {
+.card__img {
   width: 100%;
   border-radius: 10px;
 }

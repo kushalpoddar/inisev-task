@@ -1,30 +1,29 @@
 <template>
   <div class="modal-container">
-    <div class="modal-overlay">
-      <div ref="currentModal" class="card-body">
-        <div class="card-img">
-          <img class="card-img" :src="user.image" />
-        </div>
-        <div class="card-content">
-          <div class="card-text">
+    <div class="modal-container__overlay">
+      <div ref="currentModal" class="card">
+        <img class="card__img" :src="user.image" />
+
+        <div class="card__content">
+          <div class="card__text">
             <div class="icon">
               <img :src="require('@/assets/img/0.png')" />
             </div>
             <div class="label">{{ user.name }}</div>
           </div>
-          <div class="card-text">
+          <div class="card__text">
             <div class="icon">
               <img :src="require('@/assets/img/1.png')" />
             </div>
             <div class="label" @click="sendEmail()">{{ user.email }}</div>
           </div>
-          <div class="card-text">
+          <div class="card__text">
             <div class="icon">
               <img :src="require('@/assets/img/2.png')" />
             </div>
             <div class="label">{{ user.phone }}</div>
           </div>
-          <div class="card-text">
+          <div class="card__text">
             <div class="icon">
               <img :src="require('@/assets/img/3.png')" />
             </div>
@@ -32,7 +31,7 @@
               {{ user.address.city }}, {{ user.address.street }}
             </div>
           </div>
-          <div class="card-text">
+          <div class="card__text">
             <div class="icon">
               <img :src="require('@/assets/img/4.png')" />
             </div>
@@ -109,7 +108,7 @@ export default {
   border: 2px solid #000;
   padding: 3px;
 }
-.card-content {
+.card__content {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -123,13 +122,13 @@ export default {
   top: 0;
   left: 0;
 }
-.card-text {
+.card__text {
   margin: 5px 0;
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.modal-overlay {
+.modal-container__overlay {
   height: 100%;
   width: 100%;
   background: #0000006b;
@@ -169,7 +168,7 @@ export default {
   border-bottom: 5px solid #000;
   margin-right: 50px;
 }
-.card-body {
+.card {
   display: flex;
   width: 50%;
   height: 70%;
@@ -177,12 +176,8 @@ export default {
   border-radius: 10px;
   position: relative;
 }
-.card {
-  width: 250px;
-  margin: 10px 5px;
-  position: relative;
-}
-.card-img {
+
+.card__img {
   height: 100%;
   border-radius: 10px;
 }

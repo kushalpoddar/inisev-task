@@ -3,35 +3,31 @@
     <div v-show="showNotification" class="alert-notification">
       {{ alert_msg }}
     </div>
-    <div class="center-card">
-      <div class="w100 is-flex">
+    <div class="container__card">
+      <div class="">
         <p class="title">SIGN IN TO YOUR ACCOUNT</p>
       </div>
 
-      <div class="w100 is-flex">
+      <div class="">
         <input
           v-model="user.username"
-          class="input-control w-100"
+          class="container__input"
           type="text"
           placeholder="johnnythedesigner@gmail.com"
         />
       </div>
 
-      <div class="w100 is-flex">
+      <div class="">
         <input
           v-model="user.password"
-          class="input-control w-100"
+          class="container__input"
           type="password"
           placeholder="********"
         />
       </div>
 
-      <div class="w100 mt-50">
-        <button
-          type="button"
-          @click="login()"
-          class="w-100 button button-primary"
-        >
+      <div class="container__button">
+        <button type="button" @click="login()" class="button button--primary">
           SIGN IN
         </button>
       </div>
@@ -92,24 +88,24 @@ export default {
 .button {
   padding: 15px;
   border: none;
+  width: 100%;
 }
 .button:hover {
   cursor: pointer;
 }
-.button-primary {
+.button--primary {
   background: rgb(62, 0, 144);
   color: #fff;
 }
 .title {
   font-size: 25px;
 }
-.w-100 {
-  width: 100%;
-}
-.mt-50 {
+
+.container__button {
   margin-top: 50px;
 }
-.input-control {
+.container__input {
+  width: 100%;
   padding: 15px 10px;
   background: rgb(215, 215, 215);
   border: none;
@@ -123,7 +119,7 @@ export default {
   align-items: center;
   min-height: 100vh;
 }
-.center-card {
+.container__card {
   width: 40%;
 }
 </style>

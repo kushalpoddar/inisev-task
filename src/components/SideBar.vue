@@ -1,11 +1,11 @@
 <template>
   <div class="sidebar">
-    <div class="logo-item">LOGOIPSUM</div>
-    <div class="sidebar-item">MENU ELEMENT</div>
-    <div class="sidebar-item">MENU ELEMENT</div>
-    <div class="sidebar-item">MENU ELEMENT</div>
+    <div class="sidebar__logo">LOGOIPSUM</div>
+    <div class="sidebar__item">MENU ELEMENT</div>
+    <div class="sidebar__item">MENU ELEMENT</div>
+    <div class="sidebar__item">MENU ELEMENT</div>
 
-    <div @click="logout()" class="logout-item">
+    <div @click="logout()" class="sidebar__logout">
       <img
         style="width: 20px; height: 20px; margin-right: 5px"
         :src="require('@/assets/img/logout.png')"
@@ -32,7 +32,7 @@ export default {
 };
 </script>
 <style scoped>
-.logo-item {
+.sidebar__logo {
   font-weight: bold;
   font-size: 20px;
 }
@@ -45,13 +45,13 @@ export default {
   padding: 10px;
   box-sizing: border-box;
 }
-.sidebar-item {
+.sidebar__item {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
   padding: 10px;
   margin: 10px 0;
 }
-.logout-item {
+.sidebar__logout {
   bottom: 0;
   left: 10px;
   position: absolute;
